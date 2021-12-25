@@ -6,13 +6,15 @@ public class Book {
     private Integer price;
     private String url;
     private String description;
+    private Integer quantity;
 
-    public Book(String name, String author, Integer price, String url, String description){
-        this.name = name;
-        this.author = author;
-        this.price = price;
-        this.url = url;
-        this.description = description;
+    public Book(String name, String author, Integer price, String url, String description, Integer quantity){
+        this.setName(name);
+        this.setAuthor(author);
+        this.setPrice(price);
+        this.setUrl(url);
+        this.setDescription(description);
+        this.setQuantity(quantity);
     }
 
     public String getName() {
@@ -53,5 +55,13 @@ public class Book {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 }
