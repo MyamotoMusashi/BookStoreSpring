@@ -1,11 +1,12 @@
 package com.knifed.bookstore.repositories;
 
-import com.knifed.bookstore.entities.Book;
+import com.knifed.bookstore.entities.Order;
 import com.knifed.bookstore.entities.ShoppingCart;
 import com.knifed.bookstore.entities.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Repository
@@ -17,7 +18,7 @@ public class UserRepository {
     }
 
     public void registerUser(User user){
-        User newUser = new User(user.getName(), new ShoppingCart(new ArrayList<Book>()));
+        User newUser = new User(user.getName(), new ShoppingCart(new HashMap<String, Order>()));
         this.userList.add(newUser);
     }
 

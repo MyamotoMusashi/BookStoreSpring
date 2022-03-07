@@ -1,19 +1,21 @@
 package com.knifed.bookstore.entities;
+import org.springframework.stereotype.Component;
 
-import java.util.List;
+import java.util.HashMap;
 
+@Component
 public class ShoppingCart {
-    private List<Book> books;
+    private HashMap<String, Order> orders;
 
-    public ShoppingCart(List<Book> books){
-        this.setBooks(books);
+    public ShoppingCart(HashMap<String, Order> orders){
+        this.setOrders(orders);
     }
 
-    public List<Book> getBooks() {
-        return books;
+    public HashMap<String,Order> getOrders() {
+        return this.orders;
     }
 
-    public void setBooks(List<Book> books) {
-        this.books = books;
+    public void setOrders(HashMap<String, Order> orders) {
+        this.orders = orders;
     }
 }

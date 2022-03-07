@@ -1,6 +1,8 @@
 package com.knifed.bookstore.entities;
 
 public class Book {
+    public static Integer currentCount = 0;
+    private Integer id;
     private String name;
     private String author;
     private Integer price;
@@ -15,6 +17,8 @@ public class Book {
         this.setUrl(url);
         this.setDescription(description);
         this.setQuantity(quantity);
+        this.setId(Book.currentCount+1);
+        Book.currentCount++;
     }
 
     public String getName() {
@@ -63,5 +67,13 @@ public class Book {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    private void setId(Integer id) {
+        this.id = id;
     }
 }
