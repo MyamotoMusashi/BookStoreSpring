@@ -33,4 +33,8 @@ public class ShoppingCartRepository {
     public void clearShoppingCart() {
             this.shoppingCart.getOrders().clear();
     }
+
+    public void removeOrderById(Integer id) {
+            this.shoppingCart.getOrders().remove(id.toString());
+    }
 }

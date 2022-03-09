@@ -1,7 +1,8 @@
 package com.knifed.bookstore.entities;
 
 public class Order {
-
+    public static Integer counter = 0;
+    private Integer id;
     private Book book;
     private User user;
     private OrderStatus status;
@@ -10,6 +11,7 @@ public class Order {
         this.setBook(book);
         this.setUser(user);
         this.setStatus(OrderStatus.NotProcessed);
+        this.id = Order.getId();
     }
 
     public User getUser() {
@@ -34,5 +36,10 @@ public class Order {
 
     public void setStatus(OrderStatus status) {
         this.status = status;
+    }
+
+    public static Integer getId(){
+        Order.counter++;
+        return Order.counter;
     }
 }
