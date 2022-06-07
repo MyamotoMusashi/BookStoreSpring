@@ -2,10 +2,7 @@ package com.knifed.bookstore.controllers;
 
 import com.knifed.bookstore.entities.Order;
 import com.knifed.bookstore.repositories.OrderRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,9 +22,11 @@ public class OrderController {
 
     @PostMapping("/orders")
     public void addOrder(@RequestBody Order order){
-        System.out.println(order.getBook().getName());
-        System.out.println(order.getUser());
-        System.out.println("Here");
         this.orderRepository.addOrder(order);
+    }
+
+    @PutMapping("/orders")
+    public void editOrder(@RequestBody Order order){
+        this.orderRepository.editOrder(order);
     }
 }

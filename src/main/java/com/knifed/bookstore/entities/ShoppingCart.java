@@ -7,6 +7,10 @@ import java.util.HashMap;
 public class ShoppingCart {
     private HashMap<String, Order> orders;
 
+    public ShoppingCart(){
+        this.setOrders(new HashMap<>());
+    };
+
     public ShoppingCart(HashMap<String, Order> orders){
         this.setOrders(orders);
     }

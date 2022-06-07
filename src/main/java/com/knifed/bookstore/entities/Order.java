@@ -11,7 +11,7 @@ public class Order {
         this.setBook(book);
         this.setUser(user);
         this.setStatus(OrderStatus.NotProcessed);
-        this.id = Order.getId();
+        this.id = Order.receiveId();
     }
 
     public User getUser() {
@@ -38,8 +38,12 @@ public class Order {
         this.status = status;
     }
 
-    public static Integer getId(){
+    public static Integer receiveId(){
         Order.counter++;
         return Order.counter;
+    }
+
+    public Integer getId() {
+        return id;
     }
 }

@@ -7,6 +7,7 @@ import com.knifed.bookstore.repositories.BookRepository;
 import com.knifed.bookstore.repositories.ShoppingCartRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.Optional;
 
 @RestController
@@ -21,8 +22,8 @@ public class ShoppingCartController {
     }
 
     @GetMapping("/shopping-cart")
-    public ShoppingCart getShoppingCart(){
-        return this.shoppingCartRepository.getShoppingCart();
+    public HashMap<String, Order> getShoppingCartOrders(){
+        return this.shoppingCartRepository.getShoppingCartOrders();
     }
 
     @PostMapping("/shopping-cart")

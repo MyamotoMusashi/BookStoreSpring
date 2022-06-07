@@ -5,6 +5,7 @@ import com.knifed.bookstore.entities.Order;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
+import java.util.List;
 
 @Repository
 public class ShoppingCartRepository {
@@ -17,6 +18,8 @@ public class ShoppingCartRepository {
         public ShoppingCart getShoppingCart() {
             return this.shoppingCart;
         }
+
+        public HashMap<String, Order> getShoppingCartOrders() { return  this.shoppingCart.getOrders();}
 
         public void addToShoppingCard(Order order){
             HashMap<String, Order> orders = this.shoppingCart.getOrders();
